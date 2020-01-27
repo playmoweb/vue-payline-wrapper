@@ -50,15 +50,15 @@ import {loadPayline} from "../payline-helper.js";
       }
     },
     computed: {
-      paylineApi() {
-        return window.Payline.Api;
+      payline() {
+        return window.Payline;
       },
       isLightbox() {
         return this.widgetType === 'lightbox';
       }
     },
     beforeMount() {
-      if (!this.paylineApi) {
+      if (!this.payline) {
         loadPayline(this.isHomologation);
       }
     },
@@ -100,7 +100,9 @@ import {loadPayline} from "../payline-helper.js";
        */
       initPayline(token) {
         this.$emit("readyToPay", false);
-        this.paylineApi.reset(token, this.widgetType);
+        if(this.payline){
+          this.payline.Api.reset(token, this.widgetType);
+        }
       },
       /**
        * Emit the current Payline state.
@@ -133,7 +135,7 @@ import {loadPayline} from "../payline-helper.js";
         this.$emit("handleFinalStateReached", param);
 
         this.$nextTick().then(() => {
-          this.paylineApi.hide();
+          this.payline.Api.hide();
         });
 
         switch (param.state) {
