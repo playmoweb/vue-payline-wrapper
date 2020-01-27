@@ -13,6 +13,35 @@ npm i --save @playmoweb/vue-payline-wrapper
 
 ## Usage
 
-```vue
+```js
+import VuePaylineWrapper from '@playmoweb/vue-payline-wrapper';
+import Vue from 'vue';
+Vue.use(VuePaylineWrapper);
+```
 
+```vue
+<template>
+    <VuePaylineWrapper :noClose="noClose" :token="token" widgetType="lightbox"
+                       @success="(state) => this.logState(state)"
+                       @error="(state) => this.logState(state)"
+                       @didshowstate="(state) => this.logState(state)"
+                       @handleFinalStateReached="(state) => this.logState(state)"
+                       @readyToPay="(state) => this.logState(state)"/>
+</template>
+<script>
+    export default {
+        name: "samplePayline",
+        data(){
+            return {
+                token: "YOUR-PAYMENT-TOKEN-FROM-DO-WEB-PAYMENT",
+                noClose: false
+            }
+        },
+        methods: {
+            logState(state){
+                console.log(state);
+            }
+        }
+    }
+</script>
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "vue-payline-wrapper",
+  "name": "@playmoweb/vue-payline-wrapper",
   "version": "1.0.0",
   "description": "VueJS Payline Widget Wrapper.",
   "main": "dist/index.js",
