@@ -19,7 +19,8 @@
     "build": "npm run build:module",
     "build:module": "NODE_ENV=production bili --format cjs,es --module-name VuePaylineWrapper",
     "lint": "eslint --ext js --ext vue src",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
