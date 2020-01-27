@@ -21,7 +21,7 @@ Vue.use(VuePaylineWrapper);
 
 ```vue
 <template>
-    <VuePaylineWrapper :noClose="noClose" :token="token" widgetType="lightbox"
+    <VuePaylineWrapper :noClose="noClose" :token="token" widgetType="lightbox" :isHomologation="isHomologation"
                        @success="(state) => this.logState(state)"
                        @error="(state) => this.logState(state)"
                        @didshowstate="(state) => this.logState(state)"
@@ -34,7 +34,8 @@ Vue.use(VuePaylineWrapper);
         data(){
             return {
                 token: "YOUR-PAYMENT-TOKEN-FROM-DO-WEB-PAYMENT",
-                noClose: false
+                noClose: false,
+                isHomologation: false
             }
         },
         methods: {
