@@ -122,6 +122,8 @@ export default {
      * @param param
      */
     didshowstate(param) {
+      this.$emit("didshowstate", param);
+      
       if (param.state === "PAYMENT_METHODS_LIST") {
         // The lightbox is _not_ in the middle of the screen so…
         if (this.isLightbox) {
@@ -138,8 +140,6 @@ export default {
 
         this.$emit("readyToPay", true);
       }
-
-      this.$emit("didshowstate", param);
     },
     /**
      * Handle the Final state of the component.
