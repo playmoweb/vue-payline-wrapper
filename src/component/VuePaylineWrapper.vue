@@ -4,7 +4,7 @@
       id="PaylineWidget"
       data-auto-init="false"
       data-event-didshowstate="didshowstate"
-      data-embeddedredirectionallowed="true"
+      data-embeddedredirectionallowed="false"
       data-event-finalstatehasbeenreached="handleFinalStateReached"
     />
   </div>
