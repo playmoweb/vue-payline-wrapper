@@ -40,6 +40,10 @@ export default {
       type: Boolean,
       default: false
     },
+    autoCloseOnSuccess: {
+      type: Boolean,
+      default: true
+    },
     actionButtonText: {
       type: String,
       default: undefined
@@ -151,9 +155,11 @@ export default {
     handleFinalStateReached(param) {
       this.$emit("handleFinalStateReached", param);
 
-      this.$nextTick().then(() => {
-        this.payline.Api.hide();
-      });
+      if(this.autoCloseOnSuccess){
+        this.$nextTick().then(() => {
+          this.payline.Api.hide();
+        });
+      }
 
       switch (param.state) {
         case "PAYMENT_SUCCESS":
