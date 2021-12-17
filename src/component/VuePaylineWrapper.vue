@@ -53,6 +53,11 @@ export default {
       default: undefined
     }
   },
+  data() {
+    return {
+      payline: window.Payline,
+    };
+  },
   watch: {
     token: {
       immediate: true,
@@ -64,16 +69,15 @@ export default {
     }
   },
   computed: {
-    payline() {
-      return window.Payline;
-    },
     isLightbox() {
       return this.widgetType === "lightbox";
     }
   },
   beforeMount() {
     if (!this.payline) {
-      loadPayline(this.isHomologation);
+      loadPayline(this.isHomologation).then(() => {
+        this.payline = window.Payline;
+      });
     }
   },
   mounted() {
