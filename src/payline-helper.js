@@ -25,14 +25,14 @@ function loadStyle(url) {
   })
 }
 
-export const loadPayline = async (isHomologation = false) => {
+export const loadPayline = (isHomologation = false) => {
   if(isHomologation){
-    await Promise.all([
+    return Promise.all([
       loadScript("https://homologation-payment.cdn.payline.com/scripts/widget-min.js",
       loadStyle("https://homologation-payment.cdn.payline.com/styles/widget-min.css"),
     ]);
   } else {
-    await Promise.all([
+    return Promise.all([
       loadScript("https://payment.payline.com/scripts/widget-min.js"),
       loadStyle("https://payment.payline.com/styles/widget-min.css"),
     ]);
