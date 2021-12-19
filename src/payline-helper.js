@@ -28,7 +28,7 @@ function loadStyle(url) {
 export const loadPayline = (isHomologation = false) => {
   if(isHomologation){
     return Promise.all([
-      loadScript("https://homologation-payment.cdn.payline.com/scripts/widget-min.js",
+      loadScript("https://homologation-payment.cdn.payline.com/scripts/widget-min.js"),
       loadStyle("https://homologation-payment.cdn.payline.com/styles/widget-min.css"),
     ]);
   } else {
