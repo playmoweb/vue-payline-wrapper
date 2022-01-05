@@ -66,6 +66,11 @@ export default {
           this.initPayline(this.token);
         }
       }
+    },
+    payline(v) {
+      if (v) {
+          this.initPayline(this.token);
+      }
     }
   },
   computed: {
