@@ -69,7 +69,9 @@ export default {
     },
     payline(v) {
       if (v) {
-          this.initPayline(this.token);
+          setTimeout(() => {
+            this.initPayline(this.token);
+          }, 15);
       }
     }
   },
