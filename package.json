@@ -13,7 +13,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-vue": "^6.1.2",
-    "rollup-plugin-vue": "^5.1.6",
+    "rollup-plugin-vue": "^6.0.0",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   },
